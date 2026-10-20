@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>EcoColeta</title>
+    <meta name="description" content="Aplicativo de coleta seletiva para os moradores de Vassouras." />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/ecocoleta/manifest.json" />
+    <meta name="theme-color" content="#2E7D32" />
+
+    <!-- iPhone: abrir em tela cheia quando adicionado à Tela de Início -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="EcoColeta" />
+    <link rel="apple-touch-icon" href="/ecocoleta/icons/apple-touch-icon.png" />
+
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: #ffffff;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        overflow: hidden;
+        overscroll-behavior: none;
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+        overflow-x: hidden;
+      }
+      /* iPhone: evita o zoom automático ao tocar em campos de texto */
+      input,
+      textarea,
+      select {
+        font-size: 16px;
+      }
+    </style>
+  <meta name="theme-color" content="#2E7D32">
+<link rel="icon" href="/ecocoleta/favicon.ico"/></head>
+
+  <body>
+    <noscript>Ative o JavaScript para usar o EcoColeta.</noscript>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/ecocoleta/sw.js', { scope: '/ecocoleta/' }).catch(function () {});
+        });
+      }
+    </script>
+  <script src="/ecocoleta/_expo/static/js/web/__expo-metro-runtime-8c088df87a31e4e6accd81c554ec290d.js" defer></script><script src="/ecocoleta/_expo/static/js/web/__common-d82221298a14a1dd7bd39930e9638adf.js" defer></script><script src="/ecocoleta/_expo/static/js/web/entry-28fc5d405c619add85939a3c934b7a19.js" defer></script>
+</body>
+</html>
